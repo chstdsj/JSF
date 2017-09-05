@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <!--当页面全部为移动页面时，使用全局配置，这样不用在每个页面配置-->
+    <application>
+        <navigation-handler>
+            org.primefaces.mobile.application.MobileNavigationHandler
+        </navigation-handler>
+        <default-render-kit-id>PRIMEFACES_MOBILE</default-render-kit-id>
+    </application>
+</faces-config>

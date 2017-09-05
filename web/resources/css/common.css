@@ -1,0 +1,67 @@
+
+
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.ui-header .ui-title{
+    padding: 0;
+    font-size: 1.5em;
+}
+.ui-content{
+    margin: 0;
+    padding: 0;
+}
+a.ui-link.ui-widget{
+    color: #000;
+    text-decoration: none;
+}
+
+div.ui-header.ui-bar-inherit{
+    height: 6em;line-height: 6em;background: white;
+}
+
+div.ui-page {
+    background: white;
+}
+
+.menu{
+    background: url('/resources/css/images/icon/菜单.png') no-repeat;
+    background-size: 100%;
+}
+.close{
+    background: url('/resources/css/images/icon/关闭2.png') no-repeat;
+    background-size: 100%;
+}
+.house{
+    background: url('/resources/css/images/icon/个人中心.png') no-repeat;
+    background-size: 100%;
+}
+.vileManager{
+    background: url("/resources/css/images/icon/菜单(1).png") no-repeat;
+    background-size: 100%;
+}
+.feedBack{
+    background: url("/resources/css/images/icon/反馈2.png") no-repeat;
+    background-size: 100%;
+}
+.about{
+    background: url("/resources/css/images/icon/关于2.png") no-repeat;
+    background-size: 100%;
+}
+.config{
+    background: url("/resources/css/images/icon/确认.png") no-repeat;
+    background-size: 100%;
+}
+.blank{
+    /*background: #fff;*/
+    /*background-size: 100%;*/
+}
+
+
+
+
+
+

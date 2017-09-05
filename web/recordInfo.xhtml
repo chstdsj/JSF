@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile">
+<h:head>
+    <h:outputStylesheet library="css" name="common.css"/>
+    <h:outputStylesheet>
+        div.ui-grid-solo > .ui-block-a{
+            border-bottom: 1px solid;
+            margin-bottom: 4%;
+        }
+        div.ui-grid-a > .ui-block-a{
+            width: 20%;
+        }
+        div.ui-grid-a > .ui-block-b{
+            width: 80%;
+        }
+        img{
+            width: 57%;padding-left: 2em;
+        }
+        label.ui-btn.ui-btn-inherit.ui-btn-icon-left.ui-corner-all.ui-checkbox-off,
+        label.ui-btn.ui-btn-inherit.ui-btn-icon-left.ui-corner-all.ui-checkbox-on{
+            border: none;
+            box-shadow: none;
+            background: none;
+            text-align: center;
+            color: #1bcbde;
+            margin-top: -5%;
+            margin-bottom: 12%;
+        }
+    </h:outputStylesheet>
+</h:head>
+<h:body>
+    <pm:page>
+        <pm:header title="房产" style="border: none;"/>
+        <pm:content>
+            <h:form style="margin-top: 12%;">
+                <p:panelGrid style="width: 80%;margin-left: 10%;">
+                    <p:panelGrid columns="2">
+                        <p:graphicImage name="css/images/icon/定位.png" style="width: 100%;padding-left: 32%;"/>
+                        <p:inputText value="#{addHouse.ID}" placeholder="姓名" style="border-radius: 0;box-shadow: none;margin-left: 7%;"/>
+                    </p:panelGrid>
+                    <p:panelGrid columns="2">
+                        <p:graphicImage name="css/images/icon/身份证.png" style="width: 100%;padding-left: 32%;"/>
+                        <p:inputText value="#{addHouse.ID}" placeholder="身份证号" style="border-radius: 0;box-shadow: none;margin-left: 7%;"/>
+                    </p:panelGrid>
+                    <p:panelGrid columns="2">
+                        <p:graphicImage name="css/images/icon/手机号.png" style="width: 100%;padding-left: 32%;"/>
+                        <p:inputText value="#{addHouse.phone}" placeholder="手机号" style="border-radius: 0;box-shadow: none;margin-left: 7%;"/>
+                    </p:panelGrid>
+                </p:panelGrid>
+                <p:selectBooleanCheckbox value="true" itemLabel="同意瑞和隐私政策及使用条款" style="width: 80%;margin-left: 10%;"  />
+                <p:commandButton value="绑定" action="submitInfo"
+                                 style="width: 38%;margin-left: 29%;border-radius: 0;
+                                                box-shadow: none;background-color: #01c7e0;color: white;"/>
+                <div style="text-align: center;margin: 10% 0 2% 0;">
+                    <p:button icon="close" outcome="house" value="" style="width: 4em;height: 4em;border-radius: 50%;display: inline-block;"/>
+                </div>
+            </h:form>
+        </pm:content>
+    </pm:page>
+</h:body>
+</html>

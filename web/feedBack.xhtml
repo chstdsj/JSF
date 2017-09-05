@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile">
+    <h:head>
+        <h:outputStylesheet library="css" name="common.css"/>
+        <h:outputStylesheet>
+            div.ui-header.ui-bar-inherit{
+                height: 4em;line-height: 3em;
+            }
+        </h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <pm:page id="feedBack">
+            <pm:header title="反馈"/>
+            <pm:content>
+                <ui:include src="prompt.xhtml"/>
+                <h:form accept="" style="text-align: center;">
+                    <p:inputTextarea placeholder="问题反馈" rows="6" cols="10"
+                                     style="border: 1px solid #e0dbdb;box-shadow: none;width: 90%;margin-left: 5%;"/>
+                    <p:commandButton value="提交" oncomplete="PF('success_dialog').show()"
+                                     style="width: 23%;background: #c4c4f5;display: inline-block;"/>
+                </h:form>
+                <p:panelGrid columns="1" style="text-align: center;margin-top: 12em;">
+                    <p:column>
+                        <p:button icon="close" outcome="menu" value="" style="width: 4em;height: 4em;border-radius: 50%;display: inline-block;"/>
+                    </p:column>
+                </p:panelGrid>
+            </pm:content>
+        </pm:page>
+
+    </h:body>
+</html>

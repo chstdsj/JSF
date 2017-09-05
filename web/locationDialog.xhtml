@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <p:dialog id="houseType" widgetVar="shwoHouseType" showEffect="fade" modal="true" resizable="false" closable="false">
+        <p:outputPanel style="min-width: 166px;padding: 16px 16px 0 16px;">
+            <p:link value="业主●产权登记人" outcome="addHouse" style="padding-left: 4%;"/>
+            <p:separator/>
+            <p:link value="业主●家属" outcome="recordInfo" style="padding-left: 4%;"/>
+            <p:separator/>
+            <p:link value="租户" outcome="recordInfo" style="padding-left: 4%;"/>
+            <p:commandButton value="取消" type="button" onclick="PF('shwoHouseType').hide();" style="width: 40%;margin-left: 27%;" />
+        </p:outputPanel>
+    </p:dialog>
+</html>

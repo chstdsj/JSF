@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile">
+    <f:view renderKitId="PRIMEFACES_MOBILE"/>
+    <h:head>
+        <h:outputStylesheet >
+            html,body{
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <pm:page id="main">
+            <pm:header title="瑞和"/>
+            <pm:content>
+                <h:form>
+                    <p:panelGrid columns="5">
+                        <p:commandButton/>
+                        <p:commandButton/>
+                        <p:commandButton value="指纹验证" action="#{demo2.go('main')}"/>
+                        <p:commandButton value="手势验证" action="#{demo2.go('second')}"/>
+                        <p:commandButton value="人脸验证" action="#{demo2.go('three')}"/>
+                    </p:panelGrid>
+                    <p:panel >
+                        <h:outputText value="指纹识别区域"/>
+                    </p:panel>
+                    <p:panel>
+                        <h:outputText value="菜单区域"/>
+                    </p:panel>
+                </h:form>
+            </pm:content>
+        </pm:page>
+        <pm:page id="second">
+            <pm:header title="瑞和"/>
+            <pm:content>
+                <p:panelGrid columns="5">
+                    <p:commandButton/>
+                    <p:commandButton value="指纹验证" action="#{demo2.go('main')}"/>
+                    <p:commandButton value="手势验证" action="#{demo2.go('second')}"/>
+                    <p:commandButton value="人脸验证" action="#{demo2.go('three')}"/>
+                    <p:commandButton/>
+                </p:panelGrid>
+                <p:outputLabel value="这是第二个页面"/>
+            </pm:content>
+        </pm:page>
+        <pm:page id="three">
+            <pm:header title="瑞和"/>
+            <pm:content>
+                <p:panelGrid columns="5">
+                    <p:commandButton value="指纹验证" action="#{demo2.go('main')}"/>
+                    <p:commandButton value="手势验证" action="#{demo2.go('second')}"/>
+                    <p:commandButton value="人脸验证" action="#{demo2.go('three')}"/>
+                    <p:commandButton/>
+                    <p:commandButton/>
+                </p:panelGrid>
+                <p:outputLabel value="这是第三个页面"/>
+            </pm:content>
+        </pm:page>
+    </h:body>
+
+</html>

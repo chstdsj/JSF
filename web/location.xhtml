@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile">
+<h:head>
+    <h:outputStylesheet library="css" name="common.css"/>
+    <h:outputStylesheet>
+        .ui-corner-all > .ui-header:first-child{
+            height: 0;
+        }
+        div.ui-popup.ui-body-inherit.ui-overlay-shadow.ui-corner-all{
+            border: 1px solid red;box-shadow: none;border-radius: inherit;
+        }
+    </h:outputStylesheet>
+</h:head>
+<h:body>
+    <pm:page >
+        <pm:header title="位置" style="height: 3em;line-height: 3em;"/>
+        <pm:content>
+            <ui:include src="locationDialog.xhtml"/>
+            <h:form prependId="false">
+                <h:panelGrid columns="3" cellspacing="8" style="padding-left: 2%;">
+                    <p:outputLabel value="定位城市" for="privince" style="font-size: larger;font-weight: bolder;text-align: center;"/>
+                    <p:selectOneMenu id="privince" value="#{location.provice}">
+                        <f:selectItem itemLabel="选择省份" itemValue="" />
+                        <f:selectItem itemLabel="湖北" itemValue="hb"/>
+                        <f:selectItem itemLabel="湖南" itemValue="hn"/>
+                    </p:selectOneMenu>
+                    <p:selectOneMenu value="#{location.city}">
+                        <f:selectItem itemLabel="选择城市" itemValue="" />
+                        <f:selectItem itemLabel="武汉" itemValue="wh"/>
+                        <f:selectItem itemLabel="黄石" itemValue="hs"/>
+                    </p:selectOneMenu>
+                </h:panelGrid>
+                <!--<pm:field>-->
+                    <!--<p:autoComplete value="#{location.community}" size="20" placeholder="社区" completeMethod="#{location.areaList}"-->
+                                    <!--var="community" itemLabel="#{community.area}" itemValue="#{community}" converter="communtityConverter">-->
+                        <!--<p:ajax event="itemSelect" listener="#{location.doInputListen}" update="#{p:component('address')}"/>-->
+                    <!--</p:autoComplete>-->
+                <!--</pm:field>-->
+                <p:panelGrid style="height: 7em;">
+                    <p:inputText value="#{location.area}" size="20" placeholder="社区"
+                                 style="background:url('/resources/css/images/icon/搜索.png') no-repeat; font-weight: bolder;
+                                 background-size: 2em; padding-left: 9%;border: none;box-shadow: none;margin-left: 11%;">
+                        <p:ajax event="change" listener="#{location.doInputListen}" update="@form"/>
+                    </p:inputText>
+                    <p:selectOneMenu id="address" value="#{location.address}" rendered="#{location.showAddr}">
+                        <f:selectItem itemLabel="万科城一期2栋1单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城二期2栋2单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城三期2栋3单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城四期2栋4单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城二期2栋2单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城三期2栋3单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城四期2栋4单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城二期2栋2单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城三期2栋3单元" itemValue=""/>
+                        <f:selectItem itemLabel="万科城四期2栋4单元" itemValue=""/>
+                    </p:selectOneMenu>
+                </p:panelGrid>
+                <p:panelGrid>
+                    <p:graphicImage name="css/images/icon/map.png" style="width: 100%;"/>
+                </p:panelGrid>
+                <p:panelGrid columns="5" style="margin: 2em 0 1em 0;text-align: center;">
+                    <p:column/>
+                    <p:column>
+                        <p:commandButton id="config" icon="config" onclick="PF('shwoHouseType').show();" type="button" value=""
+                                  style="width: 4em;height: 4em;border-radius: 50%;display: inline-block;"/>
+                        <p:outputLabel value="确认" style="font-weight: 900;"/>
+                    </p:column>
+                    <p:column/>
+                    <p:column>
+                        <p:button outcome="house" value="" icon="close" style="width: 4em;height: 4em;border-radius: 50%;display: inline-block;"/>
+                        <p:outputLabel value="取消" style="font-weight: 900;"/>
+                    </p:column>
+                    <p:column/>
+                </p:panelGrid>
+            </h:form>
+        </pm:content>
+    </pm:page >
+</h:body>
+</html>

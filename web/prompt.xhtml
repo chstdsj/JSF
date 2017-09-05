@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <p:dialog id="dlg" widgetVar="success">
+       <p:outputLabel value="提交成功，感谢您的反馈！" style="padding: 4%;margin: 0 0 0 30px;" />
+
+    </p:dialog>
+    <h:outputStylesheet>
+        /*div.ui-header.ui-bar-inherit{*/
+            /*height: 2.5em;float: left;*/
+        /*}*/
+    </h:outputStylesheet>
+    <h:outputStylesheet>
+        /*$("p").css({ color: "#ff0011", background: "blue" });*/
+        /*$("div [class=ui-header ui-bar-inherit]").css({"height": "2.5em","float": "left"});*/
+    </h:outputStylesheet>
+
+    <!-- 成功消息提示对话框 -->
+    <p:dialog closable="false" draggable="false" modal="true" resizable="false" header="信息"
+              widgetVar="success_dialog" style="font-size: small">
+        <p:panelGrid id="success_dialog_panel_grid">
+            <p:row style="border: none;">
+                <p:column style="border: none; vertical-align: middle; text-align: center">
+                    <!--<h:graphicImage library="images" name="icon-success.png" width="38" height="38"/>-->
+                </p:column>
+                <p:column style="border: none; vertical-align: middle; text-align: left">
+                    <!--<h:outputText escape="false" value="#{mainView.successDialogMessage}"/>-->
+                    <p:outputLabel value="提交成功，感谢您的反馈！" style="padding: 4%;margin: 0 0 0 30px;" />
+                </p:column>
+            </p:row>
+            <p:row style="border: none;">
+                <p:column colspan="2" style="border: none; width: 100%; height: 12;"></p:column>
+            </p:row>
+            <p:row style="border: none;">
+                <p:column colspan="2" style="border: none; vertical-align: middle; text-align: center">
+                    <p:commandButton value="确定" type="button" onclick="PF('success_dialog').hide()"/>
+                </p:column>
+            </p:row>
+        </p:panelGrid>
+    </p:dialog>
+
+</html>
